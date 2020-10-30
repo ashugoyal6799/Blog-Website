@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require('lodash');
 const mongoose = require('mongoose');
+const {MONGOURI} = require('./keys');
 
 const homeStartingContent = "Lorem Ipsum  of Lorem Ipsum.";
 const aboutContent = "Lorem Ipsum  including versions of Lorem Ipsum";
@@ -10,7 +11,6 @@ const contactContent = "Lorem Ipsum  versions of Lorem Ipsum";
 
 
 // const postCollection=[];  // we can push something to a const object
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-ashu:todo123@cluster0.hvizd.mongodb.net/blogDB", {useNewUrlParser: true});
+mongoose.connect(MONGOURI);
 
 const PostSchema ={
     title : String,
