@@ -7,11 +7,7 @@
         <% postCollection.forEach(function(post){ %>
             <h1><%= post.title %> </h1>
             <p>
-            <%= post.content.substring(0,250)  %>
-            <% if(post.content.length > 250){ %>
-                ...
-                <a href="/posts/<%=post.title %>">Read More</a>
-            <% } %>
+            <%= post.content  %>
             </p> 
         <%})%>
         <br>
