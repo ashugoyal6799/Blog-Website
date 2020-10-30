@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(MONGOURI);
+mongoose.connect(MONGOURI,{ useNewUrlParser: true , useUnifiedTopology: true});
 
 const PostSchema ={
     title : String,
