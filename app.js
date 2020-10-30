@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require('lodash');
 const mongoose = require('mongoose');
-const {MONGOURI} = require('./keys');
+const {MONGOURI} = require('./config');
 
 const homeStartingContent = "Lorem Ipsum  of Lorem Ipsum.";
 const aboutContent = "Lorem Ipsum  including versions of Lorem Ipsum";
